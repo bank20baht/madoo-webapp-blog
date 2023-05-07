@@ -6,7 +6,7 @@ import axios from "axios";
 import styles from "../../styles/Home.module.css";
 import { useSession } from "next-auth/react";
 
-const apiURL = "http://localhost:5000/api/article/";
+const apiURL = "http://localhost:5000/api/articles/";
 
 export type ArticleData = {
   _id: string;
@@ -39,7 +39,7 @@ const Article = () => {
     }
   }, [id]);
   const deleteArticle = async () => {
-    await axios.delete(apiURL + id);
+    await axios.delete(apiURL + "delete/" +  id);
     setArticle(null);
     router.push("/");
   };

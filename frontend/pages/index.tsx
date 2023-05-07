@@ -15,7 +15,7 @@ export type ArticleData = {
   user_img: string;
 };
 
-const apiURL = "http://localhost:5000/api/articles";
+const apiURL = "http://localhost:5000/api/articles/";
 
 const Home: NextPage = () => {
   const router = useRouter();

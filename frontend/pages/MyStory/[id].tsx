@@ -14,7 +14,7 @@ export type ArticleData = {
   user_img: string;
 };
 
-const apiURL = "http://localhost:5000/api/user/";
+const apiURL = "http://localhost:5000/api/articles/user/";
 
 const MyStory = () => {
   const [articles, setArticles] = useState<ArticleData[] | null>();

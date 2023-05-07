@@ -3,13 +3,11 @@ import { Textarea, Button, Text, Grid } from "@nextui-org/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import axios from "axios";
-
-const apiURL = "http://localhost:5000/api/article/";
+const apiURL = "http://localhost:5000/api/articles/";
 
 const Home = () => {
   const { data: session } = useSession();
   const [articles, setArticles] = useState();
-
   const [articleData, setArticleData] = useState({
     title: "",
     content: "",
@@ -37,9 +35,8 @@ const Home = () => {
   async function editArticle() {
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/update/article",
+        `http://localhost:5000/api/articles/edit/${id}`,
         {
-          _id: id,
           title: articleData.title,
           content: articleData.content,
           user_email: session?.user?.email,

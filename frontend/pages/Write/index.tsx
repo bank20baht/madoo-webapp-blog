@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 
 
-const apiURL = 'http://localhost:5000/api/addArticle'
+const apiURL = 'http://localhost:5000/api/articles/'
 
 const Home = () => {
     const router = useRouter();
